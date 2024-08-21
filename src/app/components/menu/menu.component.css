@@ -1,0 +1,24 @@
+.menu{
+    background-color: grey;
+    display: flex;
+
+
+}
+nav{
+    display: flex;
+    list-style: none;
+}
+.btn-navegacion{
+    background-color: cornflowerblue;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+.btn-navegacion:hover{
+    background-color: rgb(27, 41, 66);
+    color: white;
+}
+a{
+
+}
