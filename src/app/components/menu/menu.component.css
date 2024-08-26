@@ -9,6 +9,9 @@ nav{
     display: flex;
     list-style: none;
 }
+a{
+    text-decoration: none;
+}
 .btn-navegacion{
     background-color: cornflowerblue;
     padding: 10px;
