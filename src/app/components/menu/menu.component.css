@@ -4,6 +4,9 @@
 
 
 }
+.activo{
+    background-color: rgb(62, 94, 153);
+}
 nav{
     display: flex;
     list-style: none;
