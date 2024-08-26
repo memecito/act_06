@@ -4,9 +4,7 @@
 
 
 }
-.activo{
-    background-color: rgb(62, 94, 153);
-}
+
 nav{
     display: flex;
     list-style: none;
@@ -17,11 +15,14 @@ nav{
     margin: 5px;
     border: 1px solid blue;
     border-radius: 5px;
-}
-.btn-navegacion:hover{
-    background-color: rgb(27, 41, 66);
-    color: white;
-}
-a{
 
+    &:hover{
+        background-color: rgb(27, 41, 66);
+        color: white;
+    }
 }
+.activo{
+    background-color: rgb(62, 153, 92);
+    
+}
+

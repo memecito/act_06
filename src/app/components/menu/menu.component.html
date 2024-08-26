@@ -1,9 +1,14 @@
 <div class="menu">
-    <p>hola mundo</p>
-    <nav>
-        <a [routerLink]="['inicio']" routerLinkActive="activo"> <li class="btn-navegacion">Home</li></a>
-        <a [routerLink]="['nuevo']" routerLinkActive="activo"> <li class="btn-navegacion">New User</li></a>
-        <a [routerLink]="['edtiar']" routerLinkActive="activo"> <li class="btn-navegacion">Edit User</li></a>
-
-    </nav>
+  <p>hola mundo</p>
+  <nav>
+    <li class="btn-navegacion" routerLinkActive="activo" >
+      <a [routerLink]="['inicio']">Home</a>
+    </li>
+    <li class="btn-navegacion"  routerLinkActive="activo">
+      <a [routerLink]="['nuevo']"  >New User</a>
+    </li>
+    <li class="btn-navegacion" routerLinkActive="activo">
+      <a [routerLink]="['edtiar']" > Edit User</a>
+    </li>
+  </nav>
 </div>
