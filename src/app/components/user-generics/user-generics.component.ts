@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { User } from '../../interfaces/user.type=interface';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-user-generics',
@@ -8,5 +10,16 @@ import { Component } from '@angular/core';
   styleUrl: './user-generics.component.css'
 })
 export class UserGenericsComponent {
+  arrUsers: User[]=[];
+  UService= inject(UsersService);
+
+  async ngOnInit(){
+    try{
+      const response= await this.UService.getAllUsers()
+      this.arrUsers=response;
+    }catch(error){
+      console.log(error)
+    }
+  }
 
 }

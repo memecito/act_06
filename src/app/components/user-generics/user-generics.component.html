@@ -1,1 +1,6 @@
-<p>user-generics works!</p>
+<h2>lista usuarios</h2>
+<ul>
+    @for(user of arrUsers; track user.id){
+        <li>{{user.first_name}}</li>
+    }
+</ul>
