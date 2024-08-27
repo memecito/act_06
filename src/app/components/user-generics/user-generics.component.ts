@@ -16,7 +16,8 @@ export class UserGenericsComponent {
   async ngOnInit(){
     try{
       const response= await this.UService.getAllUsers()
-      this.arrUsers=response;
+      console.log(response)
+      this.arrUsers=response.results;
     }catch(error){
       console.log(error)
     }
