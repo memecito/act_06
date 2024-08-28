@@ -29,7 +29,8 @@ export class UserGenericsComponent {
   async paginasiguiente(){
     if(this.respuesta.page<this.respuesta.total_pages){
       try{
-        this.respuesta= await this.UService.getObjetPage(this.respuesta.page++);
+        console.log(this.respuesta.page+1)
+        this.respuesta= await this.UService.getObjetPage(this.respuesta.page+1);
          console.log(this.respuesta.results)
          
          
@@ -37,6 +38,22 @@ export class UserGenericsComponent {
          console.log(error)
        }
     }
+    
+   
+  }
+  async paginaanterior(){
+    if(this.respuesta.page>1){
+      try{
+        console.log(this.respuesta.page+1)
+        this.respuesta= await this.UService.getObjetPage(this.respuesta.page-1);
+         console.log(this.respuesta.results)
+         
+         
+       }catch(error){
+         console.log(error)
+       }
+    }
+    
    
   }
 

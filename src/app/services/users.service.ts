@@ -9,7 +9,7 @@ import { Respuestahttp } from '../interfaces/responsehttp.type=interface';
   providedIn: 'root'
 })
 export class UsersService {
-  private baseUrl: string= 'https://peticiones.online/api/users?page';
+  private baseUrl: string= 'https://peticiones.online/api/users?page=';
   private http= inject(HttpClient);
   arrUsers: User[]=[];
 

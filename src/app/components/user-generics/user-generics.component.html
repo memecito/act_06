@@ -6,6 +6,8 @@
 </ul>
 <div>
     <!-- este es el div de paginado -->
+    <button (click)="paginaanterior()">Prev</button>
+
      <button>Pagina {{respuesta.page}} de {{respuesta.total_pages}}</button>
      <button (click)="paginasiguiente()">Next</button>
 </div>
