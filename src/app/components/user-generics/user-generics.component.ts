@@ -57,4 +57,8 @@ export class UserGenericsComponent {
    
   }
 
+ async editar(id:number){
+    // esta funcion utiliza el servicio par devolver los datos de un usuario en concreto y mostrar una pagina de detalle
+ 
+  }
 }
