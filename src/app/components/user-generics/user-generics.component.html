@@ -1,1 +1,21 @@
-<p>user-generics works!</p>
+<h2>lista usuarios</h2>
+<div class="w_users">
+    @for(user of respuesta.results; track user.id){
+        <div class="usuario">
+            <div class="w_img">
+                <img src="{{user.image}}">
+
+            </div>
+            <p>{{user.first_name}} {{user.last_name}}</p>
+            <button (click)="editar(1)">Editar</button>
+        </div>
+    }
+</div>
+    
+<div class="paginado">
+    <!-- este es el div de paginado -->
+    <button (click)="paginaanterior()">Prev</button>
+
+     <button>Pagina {{respuesta.page}} de {{respuesta.total_pages}}</button>
+     <button (click)="paginasiguiente()">Next</button>
+</div>

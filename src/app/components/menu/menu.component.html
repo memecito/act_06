@@ -1,1 +1,14 @@
-<p>menu works!</p>
+<div class="menu">
+  <p>hola mundo</p>
+  <nav>
+    <li class="btn-navegacion" routerLinkActive="activo" >
+      <a [routerLink]="['inicio']">Home</a>
+    </li>
+    <li class="btn-navegacion"  routerLinkActive="activo">
+      <a [routerLink]="['nuevo']"  >New User</a>
+    </li>
+    <li class="btn-navegacion" routerLinkActive="activo">
+      <a [routerLink]="['edtiar']" > Edit User</a>
+    </li>
+  </nav>
+</div>
