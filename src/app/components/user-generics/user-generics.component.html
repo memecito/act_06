@@ -19,3 +19,12 @@
      <button>Pagina {{respuesta.page}} de {{respuesta.total_pages}}</button>
      <button (click)="paginasiguiente()">Next</button>
 </div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="paginaanterior()">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" (click)="paginasiguiente()">Next</a></li>
+    </ul>
+  </nav>

@@ -1,0 +1,25 @@
+<h2>lista usuarios</h2>
+<div class="w_users">
+    @for(user of respuesta.results; track user.id){
+        <div class="usuario">
+            <div class="w_img">
+                <img src="{{user.image}}">
+
+            </div>
+            <p>{{user.first_name}} {{user.last_name}}</p>
+            <button (click)="editar(1)">Editar</button>
+        </div>
+    }
+</div>
+    
+
+<div class="position-relative">
+    <nav class="position-absolute top-50 start-50 translate-middle" aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" (click)="paginaanterior()">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" (click)="paginasiguiente()">Next</a></li>
+        </ul>
+      </nav>
+</div>
