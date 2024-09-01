@@ -1,16 +1,18 @@
 .w_users{
-    margin: auto;
-    display: flex;
 
+    margin: auto;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
     flex-wrap: wrap;
 }
 .usuario{
-    margin: auto;
     width: 300px;
-    margin: 25px;
+    margin: 10px;
     background-color: EEE;
     border: solid 1px black;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
   
     p{
