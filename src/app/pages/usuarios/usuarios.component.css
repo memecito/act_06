@@ -19,13 +19,20 @@
         margin: auto;
     }
     img{
-        width: 60%;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border-radius: 50%;
+        
     }
 }
 .w_img{
       margin: auto;  
       text-align: center;
+}
+.imagen{
+    width: 60%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 50%;
+}
+.w-button{
+    display: flex;
+    margin: auto;
 }

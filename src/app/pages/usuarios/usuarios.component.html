@@ -1,17 +1,21 @@
 <h2>lista usuarios</h2>
 <div class="w_users">
     @for(user of respuesta.results; track user.id){
-        <div class="usuario">
+       <article class="col-12 col-mf-6 col-lg-4 m-3" style="width: 18rem;">
+        <div class="card shadow p-3 bg-body-secondary text-center">
             <div class="w_img">
-                <img src="{{user.image}}">
+                <img class="imagen" src="{{user.image}}">
 
             </div>
-            <p>{{user.first_name}} {{user.last_name}}</p>
-            <i class="bi bi-search"></i>
-            <i class="bi bi-eye"></i>
+            <h6 class="card-title">{{user.first_name}} {{user.last_name}}</h6>
+            <div class="w-button">
+              <a [routerLink]="['/usuarios', user._id]"><i class="bi bi-search" ></i></a> 
+            <i class="bi bi-eye" ></i>
             <i class="bi bi-trash"></i>
+            </div>
                        <!-- <button (click)="editar(1)">Editar</button> -->
         </div>
+       </article>
     }
 </div>
     
@@ -20,8 +24,8 @@
     <nav class="position-absolute top-50 start-50 translate-middle" aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><a class="page-link" (click)="paginaanterior()">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link"(click)="irpagina(1)">1</a></li>
+          <li class="page-item"><a class="page-link" (click)="irpagina(2)">2</a></li>
           <li class="page-item"><a class="page-link" (click)="paginasiguiente()">Next</a></li>
         </ul>
       </nav>

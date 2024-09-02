@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { User } from '../../interfaces/user.type=interface';
 import { Respuestahttp } from '../../interfaces/responsehttp.type=interface';
 import { UsersService } from '../../services/users.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })
@@ -53,6 +54,19 @@ async paginaanterior(){
   }
   
  
+}
+async irpagina(pag:number){
+ 
+    try{
+   
+      this.respuesta= await this.UService.getObjetPage(pag);
+       console.log(this.respuesta.results)
+       
+       
+     }catch(error){
+       console.log(error)
+     }
+  
 }
 async editar(id:number){
   
