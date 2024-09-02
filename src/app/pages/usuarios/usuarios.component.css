@@ -1,0 +1,38 @@
+.w_users{
+
+    margin: auto;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+.usuario{
+    width: 300px;
+    margin: 10px;
+    background-color: EEE;
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: center;
+  
+    p{
+        margin: auto;
+    }
+    img{
+        
+    }
+}
+.w_img{
+      margin: auto;  
+      text-align: center;
+}
+.imagen{
+    width: 60%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 50%;
+}
+.w-button{
+    display: flex;
+    margin: auto;
+}
