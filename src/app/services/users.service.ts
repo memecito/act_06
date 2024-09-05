@@ -10,6 +10,7 @@ import { Respuestahttp } from '../interfaces/responsehttp.type=interface';
 })
 export class UsersService {
   private baseUrl: string= 'https://peticiones.online/api/users?page=';
+  private userUrl: string= 'https://peticions.online/api/users/';
   private http= inject(HttpClient);
   arrUsers: User[]=[];
 
@@ -26,6 +27,8 @@ export class UsersService {
     return firstValueFrom(this.http.get<Respuestahttp>(this.baseUrl+page));
 
   }
-
+  getUserid(id:number):Promise<User>{
+    return firstValueFrom(this.http.get<User>(this.userUrl+id));
+  }
   constructor() { }
 }

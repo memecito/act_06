@@ -1,7 +1,8 @@
 <h2>lista usuarios</h2>
 <div class="w_users">
     @for(user of respuesta.results; track user.id){
-       <article class="col-12 col-mf-6 col-lg-4 m-3" style="width: 18rem;">
+      <app-user-generics [user]="user"></app-user-generics>
+       <!-- <article class="col-12 col-mf-6 col-lg-4 m-3" style="width: 18rem;">
         <div class="card shadow p-3 bg-body-secondary text-center">
             <div class="w_img">
                 <img class="imagen" src="{{user.image}}">
@@ -13,10 +14,11 @@
             <i class="bi bi-eye" ></i>
             <i class="bi bi-trash"></i>
             </div>
-                       <!-- <button (click)="editar(1)">Editar</button> -->
-        </div>
-       </article>
-    }
+                       <button (click)="editar(1)">Editar</button>
+        </div> 
+       </article>-->
+    } 
+       
 </div>
     
 
