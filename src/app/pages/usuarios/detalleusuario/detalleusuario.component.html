@@ -1,1 +1,20 @@
-<p>detalleusuario works!</p>
+
+
+  <div class="card col-12 text-center">
+    <div class="d-flex flex-row">
+        <div class="">
+            <img class="imagen " src="{{usuario.image}}">
+    
+        </div>
+        <div class="m-top-6">
+            <h3 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h3>
+            <p>Usuario: {{usuario.username}}</p>
+            <p>Email: {{usuario.email}}</p>
+        </div>
+    </div>
+    <div class="w-button">
+      <a class="btn btn-secondary m-3" role="button" (click)="eliminar()">Eliminar</a>
+      <a class="btn btn-secondary m-3" role="button" [routerLink]="['/edit',id]">Actualizar</a>
+      <a class="btn btn-secondary m-3" href="\.." role="button">Volver al listado</a>
+            </div>
+  </div>

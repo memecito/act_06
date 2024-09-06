@@ -18,14 +18,12 @@
         <div class="card shadow p-3 bg-body-secondary text-center">
             <div class="w_img">
                 <img class="imagen" src="{{user.image}}">
-
             </div>
             <h6 class="card-title">{{user.first_name}} {{user.last_name}}</h6>
             <div class="w-button">
-              <a [routerLink]="['/usuarios', user._id]" ><i class="bi bi-search" ></i></a> 
-              <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-regular fa-pen-to-square"></i>
-            <i class="fa-solid fa-trash"></i>
+              <a [routerLink]="['/usuarios', user._id]" class="m-2"><i class="bi bi-search" ></i></a> 
+            <a [routerLink]="['/edit',user._id]" class="m-2" > <i class="fa-regular fa-pen-to-square"></i></a>
+            <a (click)="eliminar($event)" class="m-2" > <i class="fa-solid fa-trash"></i></a>
                     </div>
         </div>
        </article>
