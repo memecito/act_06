@@ -1,4 +1,4 @@
-<form class="card">
+<!-- <form class="card">
   <label for="name">Nombre</label>
   <input type="text" id="name" placeholder="Nombre" />
 
@@ -16,7 +16,7 @@
   
   <label for="image">Fotografia</label>
   <input type="text" id="image" placeholder="Fotografia" />
-</form>
+</form> -->
 <!-- 
 
 Creamos el formulario como componente ya que sera reutilizado tanto en el campo de nuevo como en la
@@ -25,3 +25,55 @@ estaran desabilidtados y tendran un boton para activar su edicion, tabmien un bo
 
 
 -->
+<div class="col-6 m-3">
+  <form [formGroup]="modelForm" class="col-auto card p3" (ngSubmit)="getDataForm()">
+    <div class="m-2">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control" formControlName="name" id="name" placeholder="Introduce tu nombre">
+      <!-- @if(modelForm.get('name')?.hasError('required')&& modelForm.get('name')?.touched){
+          <p class="text-danger" >el campo es requerido</p>
+      }
+      @if(modelForm.get('name')?.hasError('minlength')&& modelForm.get('name')?.touched){
+          <p class="error">La longitud minima es de 3 caracteres</p>
+      } -->
+          @if(checkControl('name','required')){
+              <p class="text-danger" >el campo es requerido</p>
+
+          }
+          @if(checkControl('name','minlength')){
+              <p class="error">La longitud minima es de 3 caracteres</p>
+
+          }
+  </div>
+  <div class="m-2">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email" id="email" placeholder="Introduce tu email">
+      @if(checkControl('email','required')){
+          <p class="text-danger" >el campo es requerido</p>
+
+      }
+      @if(checkControl('email','pattern')){
+          <p class="text-danger" >el email es requerido</p>
+
+      }
+  </div>
+  <div class="m-2">
+      <label for="edad" class="form-label">Edad</label>
+      <input type="number" class="form-control" formControlName="edad" id="edad" placeholder="Introduce tu edad">
+  </div>
+  <div class="m-2">
+      <label for="dni" class="form-label">DNI</label>
+      <input type="text" class="form-control" formControlName="dni" id="dni" placeholder="Introduce tu nombre">
+  </div>
+  <div class="m-2">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="password" placeholder="Introduce tu password">
+  </div>
+  <div class="m-2">
+      <label for="reptiepass" class="form-label">Reptiepass</label>
+      <input type="password" class="form-control" formControlName="reptiepass" id="reptiepass" placeholder="Repite tu password">
+  </div>
+  <input type="submit" class="btn btn-danger" value="enviar" [disabled]="!modelForm.valid">
+
+  </form>
+</div>
