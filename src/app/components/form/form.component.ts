@@ -48,16 +48,5 @@ export class FormComponent {
     return this.modelForm.get(formControlName)?.hasError(validator) && this.modelForm.get(formControlName)?.touched;
   }
 
-  // ngOnInit(){
-  //   this.modelForm= new FormGroup({
-  //     _id: new FormControl(null,[]),
-  //     id: new FormControl(null,[]),
-  //     first_name:new FormControl(null,[]),
-  //     last_name:new FormControl(null, []),
-  //     email:new FormControl(null,[]),
-  //     image: new FormControl(null, []),
-  //     password:new FormControl(null,[]),
-  //     repitepass:new FormControl(null,[]),
-  //   },[])
-  // }
+ 
 }

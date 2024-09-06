@@ -28,6 +28,7 @@ constructor(private router: Router){
     console.log(this.id)
     try{
     this.usuario=  await this.uservicio.getUserid(this.id)
+    console.log(this.usuario)
     }catch(error){
       console.log(error);
     }

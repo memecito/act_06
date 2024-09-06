@@ -13,40 +13,41 @@ import { UsersService } from '../../services/users.service';
 })
 export class EditFormComponent {
 modelForm:FormGroup;
-activeRoute=inject(ActivatedRoute);
+activRoute=inject(ActivatedRoute);
 usuario!:User;
 uservicio=inject(UsersService)
+id!:string;
 constructor(){
+ 
   this.modelForm=new FormGroup({
-
-    first_name:new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    last_name:new FormControl(null, [Validators.required,Validators.minLength(3)]),
-    email:new FormControl(null,[Validators.required, Validators.pattern(/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/)]),
-    image: new FormControl(null, [Validators.required]),
-    password:new FormControl(null,[Validators.required, Validators.minLength(4)]),
-    repitepass:new FormControl(null,[Validators.required]),
+    first_name:new FormControl(null,[]),
+    last_name:new FormControl(null, []),
+    image: new FormControl(null, []),
+    password:new FormControl(null,[]),
+    repitepass:new FormControl(null,[]),
   },[])
 }
  ngOnInit(){
-  this.activeRoute.params.subscribe(
-    async (params:any)=>{
-      try{
-
-        this.usuario=await this.uservicio.getUserid(params.url)
-      }catch(error){
-        console.log(error);
-      }
-    }
-  )
-
-    this.modelForm= new FormGroup({
-      first_name:new FormControl('luis',[]),
-      last_name:new FormControl(this.usuario.last_name, []),
-      email:new FormControl(this.usuario.email,[]),
-      image: new FormControl(this.usuario.image, []),
-      password:new FormControl(this.usuario.password,[]),
-      repitepass:new FormControl(this.usuario.password,[]),
-    },[])
+  this.activRoute.params.subscribe(async (params:any)=>{
+    
+    this.id= params.url;
+     console.log(this.id)
+     try{
+     this.usuario=  await this.uservicio.getUserid(this.id)
+     console.log(this.usuario)
+     }catch(error){
+       console.log(error);
+     }
+   })
+  this.modelForm=new FormGroup({
+    first_name:new FormControl(this.usuario.first_name,[]),
+    last_name:new FormControl(this.usuario.last_name, []),
+    email:new FormControl(this.usuario.email,[]),
+    image: new FormControl(this.usuario.image, []),
+    password:new FormControl(null,[]),
+    repitepass:new FormControl(null,[]),
+  },[])
+    
    }
   getDataForm(){
 
