@@ -1,1 +1,85 @@
-<p>edit-form works!</p>
+
+<h2>Formulario Edit</h2><div class="col-12 m-3">
+
+    <form [formGroup]="modelForm" class="col-auto card p3 shadow" (ngSubmit)="getDataForm()">
+       
+            <div class="m-2">
+              <label for="first_name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="first_name" id="first_name" placeholder="Introduce tu nombre">
+             
+                  @if(checkControl('first_name','required')){
+                      <p class="text-danger" >el campo es requerido</p>
+        
+                  }
+                  @if(checkControl('first_name','minlength')){
+                      <p class="error">La longitud minima es de 3 caracteres</p>
+        
+                  }
+          </div>
+          <div class="m-2">
+            <label for="last_name" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" formControlName="last_name" id="last_name" placeholder="Introduce tu apellido">
+           
+                @if(checkControl('last_name','required')){
+                    <p class="text-danger" >el campo es requerido</p>
+        
+                }
+                @if(checkControl('last_name','minlength')){
+                    <p class="error">La longitud minima es de 3 caracteres</p>
+        
+                }
+        </div>
+        <div class="m-2">
+            <label for="username" class="form-label">usuario</label>
+            <input type="text" class="form-control" formControlName="username" id="username" placeholder="Introduce tu usuario">
+           
+                @if(checkControl('username','required')){
+                    <p class="text-danger" >el campo es requerido</p>
+        
+                }
+                @if(checkControl('username','minlength')){
+                    <p class="error">La longitud minima es de 3 caracteres</p>
+        
+                }
+        </div>
+          <div class="m-2">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" formControlName="email" id="email" placeholder="Introduce tu email">
+              @if(checkControl('email','required')){
+                  <p class="text-danger" >el campo es requerido</p>
+        
+              }
+              @if(checkControl('email','pattern')){
+                  <p class="text-danger" >el email es requerido</p>
+        
+              }
+          </div>
+          <div class="m-2">
+            <label for="image" class="form-label">URL Imagen</label>
+            <input type="text" class="form-control" formControlName="image" id="image" placeholder="Introduce una imagen">
+           
+                @if(checkControl('image','required')){
+                    <p class="text-danger" >el campo es requerido</p>
+        
+                }
+                
+        </div>
+          
+          <div class="m-2">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" formControlName="password" id="password" placeholder="Introduce tu password">
+              @if(checkControl('password','minlength')){
+                <p class="error">La longitud minima es de 6 caracteres</p>      }
+              
+          </div>
+          <div class="m-2">
+              <label for="reptiepass" class="form-label">Reptiepass</label>
+              <input type="password" class="form-control" formControlName="reptiepass" id="reptiepass" placeholder="Repite tu password">
+              <!-- @if(modelForm.hasError('checkpassword')){
+                <p class="error">Las contraseñas deben coincidir</p>
+              } -->
+          </div>
+          <input type="submit" class="btn btn-danger" value="enviar" >
+          <!--[disabled]="!modelForm.valid"-->
+    </form>
+</div>

@@ -34,9 +34,8 @@ export class UsersService {
   putUser(nuevoUser:User):any{
     let posicion = this.arrUsers.findIndex(user =>user.email===nuevoUser.email)
     if(posicion===-1){
-      return firstValueFrom(this.http.post<User>(this.userUrl,`first_name:${nuevoUser.first_name},last_name=${nuevoUser.last_name},email:${nuevoUser.email}, nuevoUsername: ${nuevoUser.username}, password:${nuevoUser.password}`))
+      return firstValueFrom(this.http.post<User>(this.userUrl,`?first_name:${nuevoUser.first_name}&last_name=${nuevoUser.last_name}&email:${nuevoUser.email}&nuevoUsername:${nuevoUser.username}&password:${nuevoUser.password}`))
     }
-    // return firstValueFrom(this.http.post<User>(this.arrUsers,`first_name:${user.first_name},last_name=${user.last_name},email:${user.email}, username: ${user.username}, password:${user.password}`))
   }
 
   delUser(_id:string):Promise<User>{

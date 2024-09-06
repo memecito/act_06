@@ -13,28 +13,32 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class UserGenericsComponent {
 uservicio=inject(UsersService);
-  @Input() user: User={  _id:"",
-    id:0,
-    first_name:"",
-    last_name:"",
-    username:"",
-    email:"",
-    image:"",
-    password:""}
+  // @Input() user: User={  _id:"",
+  //   id:0,
+  //   first_name:"",
+  //   last_name:"",
+  //   username:"",
+  //   email:"",
+  //   image:"",
+  //   password:""}
+  @Input() user!: User;
   usuario2!:User;
-  idUsuario:string="";
+ 
   constructor(private router:Router){
 
   }
   editar(arg0: number) {
   }
-  async eliminar($event:any){
+
+  async eliminar(){
     if(confirm("esta seguro que desea eliminar el usuario")){
       
-      console.log("id Usuario: "+this.user._id)
-      
-      this.idUsuario =this.user.id;
-      this.usuario2= await this.uservicio.delUser(this.idUsuario)
+      try{
+        this.usuario2= await this.uservicio.delUser(this.user._id!)
+
+      }catch(error){
+        console.log(error)
+      }
 
       console.log(this.usuario2)
       this.router.navigate(['/inicio'])
