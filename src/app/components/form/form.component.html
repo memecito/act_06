@@ -73,12 +73,12 @@
   <div class="m-2">
       <label for="reptiepass" class="form-label">Reptiepass</label>
       <input type="password" class="form-control" formControlName="reptiepass" id="reptiepass" placeholder="Repite tu password">
-      <!-- @if(modelForm.hasError('checkpassword')){
+      @if(modelForm.hasError('checkpassword')){
         <p class="error">Las contraseñas deben coincidir</p>
-      } -->
+      }
   </div>
-  <input type="submit" class="btn btn-danger" value="enviar" >
-  <!--[disabled]="!modelForm.valid"-->
+  <input type="submit" class="btn btn-danger" value="enviar" [disabled]="modelForm.valid"    >
+ 
 
   </form>
 </div>
